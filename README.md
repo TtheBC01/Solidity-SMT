@@ -1,13 +1,5 @@
-# Sample Hardhat Project
+# Sparse Merkle Tree
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+This project demonstrates the (Sparse Merkle Tree)[https://docs.iden3.io/publications/pdfs/Merkle-Tree.pdf] (SMT) data structure used by (Tornado Cash)[https://github.com/tornadocash/tornado-core]. An SMT is initialzed with all leafs assumed to be empty. Tornado Cash implemented an
+algorithm to populate the leaves of an SMT from left to right by tracking the proof path of the last commited leaf. This "leading edge" path
+is efficiently updated in the smart contract state every time a new leaf is added. 
